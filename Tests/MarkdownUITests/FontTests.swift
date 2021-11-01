@@ -159,11 +159,10 @@ final class FontTests: XCTestCase {
         )
       )
       XCTAssertEqual(
-        MarkdownStyle.Font.body.italic().bold().resolve(),
+        MarkdownStyle.Font.custom("Helvetica", size: 17).italic().bold().resolve(),
         .init(
           descriptor:
-            UIFont
-            .preferredFont(forTextStyle: .body)
+            UIFont(name: "Helvetica", size: 17)!
             .fontDescriptor
             .withSymbolicTraits(
               UIFont.preferredFont(forTextStyle: .body)
